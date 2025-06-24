@@ -1,113 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Roblox Unblocked</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: #bbb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
+    /* Header */
+    header {
+      background-color: #1e1e1e;
+      border-bottom: 1px solid #333;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    /* Sidebar styles */
+    #sidebar {
+      min-height: 100vh;
+      background-color: #1e1e1e;
+      border-left: 1px solid #333;
+    }
+
+    .sidebar-heading {
+      padding: 1rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #ffffff;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 0.5rem 1.25rem;
+      color: #bbb;
+    }
+
+    .sidebar a:hover {
+      background-color: #2c2c2c;
+    }
+
+    .dropdown-menu {
+      background-color: #2a2a2a;
+    }
+
+    .dropdown-item {
+      color: #ccc;
+    }
+
+    .dropdown-item:hover {
+      background-color: #3a3a3a;
+      color: #fff;
+    }
+
     .game-card img {
       height: 150px;
       object-fit: cover;
     }
-    .footer {
-      background: #f8f9fa;
-      padding: 20px 0;
-      margin-top: 50px;
+
+    .game-card {
+      background-color: #1c1c1c;
+      border: none;
     }
-    .footer a {
-      text-decoration: none;
-      color: #6c757d;
+
+    .game-card .card-body h6 {
+      color: #ddd;
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      color: #aaa;
+      padding: 20px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    /* Sidebar toggle for mobile */
+    @media (max-width: 991.98px) {
+      #sidebar {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 250px;
+        z-index: 1050;
+        transition: right 0.3s ease;
+      }
+
+      #sidebar.active {
+        right: 0;
+      }
+
+      #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1040;
+      }
+
+      #overlay.active {
+        display: block;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Roblox Unblocked</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#">Running</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Puzzle</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Racing</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Shooting</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Adventure</a></li>
-        </ul>
+  <!-- Overlay for mobile menu -->
+  <div id="overlay" onclick="toggleSidebar()"></div>
+
+  <!-- Header Section -->
+  <header class="d-flex justify-content-between align-items-center px-4 py-3">
+    <h1 class="text-white">Roblox Unblocked</h1>
+    <button class="btn btn-outline-light d-lg-none" onclick="toggleSidebar()">☰</button>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- Left Main Content -->
+      <div class="col-lg-9 px-4 py-3">
+        <!-- Popular Games Section -->
+        <section>
+          <h2 class="mb-4">Popular Games</h2>
+          <div class="row g-3">
+            <!-- Game Card -->
+            <div class="col-6 col-md-4 col-xl-2">
+              <div class="card game-card">
+                <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Game 1">
+                <div class="card-body text-center">
+                  <h6>Game Title 1</h6>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-xl-2">
+              <div class="card game-card">
+                <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Game 2">
+                <div class="card-body text-center">
+                  <h6>Game Title 2</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add more cards as needed -->
+          </div>
+        </section>
+        
+        
+        
+        <!-- About Roblox Unblocked -->
+<section class="mt-5">
+  <h2>About Roblox Unblocked</h2>
+  <p>
+    <strong>Roblox Unblocked</strong> is your go-to online gaming portal where you can play exciting and creative games without restrictions. Designed for players of all ages, our platform helps you access a wide variety of <strong>unblocked games</strong> that might be restricted on school, college, or work networks. Whether you're into running games, racing, puzzles, shooting, or adventure challenges, Roblox Unblocked has something for everyone.
+  </p>
+
+  <p>
+    Many educational and workplace networks limit access to gaming websites, leaving users frustrated. That’s where we come in. Roblox Unblocked provides a curated selection of top-rated HTML5 games that load instantly and run smoothly on any modern browser—no downloads, no plugins, and no sign-ups required. Our goal is simple: offer a fast, fun, and safe gaming experience even in restricted environments.
+  </p>
+
+  <h3>Why Use Roblox Unblocked?</h3>
+  <ul>
+    <li><strong>Free & Accessible:</strong> All games on the site are completely free to play.</li>
+    <li><strong>Unblocked at School/Work:</strong> We specialize in offering games that bypass standard network restrictions.</li>
+    <li><strong>Mobile Friendly:</strong> Every game works great on smartphones, tablets, and desktops.</li>
+    <li><strong>Huge Game Library:</strong> From endless runners to brain-teasing puzzles, there’s something new to play every day.</li>
+    <li><strong>Safe & Secure:</strong> No ads that force downloads, and no sketchy popups—just pure gaming.</li>
+  </ul>
+
+  <p>
+    Our community loves the fast-paced fun of racing games, the competitive thrill of shooting games, and the creativity found in puzzle and adventure categories. We are always updating our catalog with the latest titles, ensuring you never run out of challenges or excitement.
+  </p>
+
+  <p>
+    Whether you’re sneaking in a quick game during study breaks or enjoying a longer session on the weekend, Roblox Unblocked makes it easy. Our clean design, fast load times, and powerful mobile support mean you get the best experience every time you visit.
+  </p>
+
+  <p>
+    So go ahead—<em>explore, play, and enjoy</em> the freedom of gaming without limits. Bookmark Roblox Unblocked today and unlock fun anywhere, anytime.
+  </p>
+</section>
+
+
+        <!-- Footer -->
+        <footer class="mt-5">
+          <p>&copy; 2025 Roblox Unblocked. All Rights Reserved.</p>
+          <div>
+            <a href="#">About Us</a> | 
+            <a href="#">Contact</a> | 
+            <a href="#">Privacy Policy</a>
+          </div>
+        </footer>
       </div>
+
+      <!-- Sidebar (Right) -->
+      <div class="col-lg-3" id="sidebar">
+        <div class="sidebar-heading">Game Categories</div>
+        <div class="sidebar">
+
+          <!-- Running Category -->
+          <div class="dropdown">
+            <a class="dropdown-toggle d-block px-3 py-2" href="#" role="button" data-bs-toggle="dropdown">
+              🏃 Running
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Subway Surfer</a></li>
+              <li><a class="dropdown-item" href="#">Temple Run</a></li>
+            </ul>
+          </div>
+
+          <!-- Puzzle Category -->
+          <div class="dropdown">
+            <a class="dropdown-toggle d-block px-3 py-2" href="#" role="button" data-bs-toggle="dropdown">
+              🧩 Puzzle
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">2048</a></li>
+              <li><a class="dropdown-item" href="#">Unblock Me</a></li>
+            </ul>
+          </div>
+
+          <!-- Racing Category -->
+          <div class="dropdown">
+            <a class="dropdown-toggle d-block px-3 py-2" href="#" role="button" data-bs-toggle="dropdown">
+              🏎 Racing
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Racing Hero</a></li>
+              <li><a class="dropdown-item" href="#">Moto X3M</a></li>
+            </ul>
+          </div>
+
+          <!-- Shooting Category -->
+          <div class="dropdown">
+            <a class="dropdown-toggle d-block px-3 py-2" href="#" role="button" data-bs-toggle="dropdown">
+              🎯 Shooting
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Sniper Elite</a></li>
+              <li><a class="dropdown-item" href="#">Zombie Hunter</a></li>
+            </ul>
+          </div>
+
+          <!-- Adventure Category -->
+          <div class="dropdown">
+            <a class="dropdown-toggle d-block px-3 py-2" href="#" role="button" data-bs-toggle="dropdown">
+              🧗 Adventure
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Jungle Quest</a></li>
+              <li><a class="dropdown-item" href="#">Escape Room</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
     </div>
-  </nav>
-
-  <!-- Popular Games Section -->
-  <section class="container my-5">
-    <h2 class="mb-4">Popular Games</h2>
-    <div class="row g-4">
-      <!-- Game Card -->
-      <div class="col-6 col-md-4 col-lg-2">
-        <div class="card game-card">
-          <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Game 1">
-          <div class="card-body text-center">
-            <h6 class="card-title">Game Title 1</h6>
-          </div>
-        </div>
-      </div>
-      <!-- Repeat for more games -->
-      <div class="col-6 col-md-4 col-lg-2">
-        <div class="card game-card">
-          <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Game 2">
-          <div class="card-body text-center">
-            <h6 class="card-title">Game Title 2</h6>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6 col-md-4 col-lg-2">
-        <div class="card game-card">
-          <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Game 3">
-          <div class="card-body text-center">
-            <h6 class="card-title">Game Title 3</h6>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6 col-md-4 col-lg-2">
-        <div class="card game-card">
-          <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Game 4">
-          <div class="card-body text-center">
-            <h6 class="card-title">Game Title 4</h6>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-6 col-md-4 col-lg-2">
-        <div class="card game-card">
-          <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Game 5">
-          <div class="card-body text-center">
-            <h6 class="card-title">Game Title 5</h6>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer text-center">
-    <div class="container">
-      <p class="mb-1">&copy; 2025 Roblox Unblocked. All Rights Reserved.</p>
-      <div>
-        <a href="#">About Us</a> | 
-        <a href="#">Contact Us</a> | 
-        <a href="#">Privacy Policy</a>
-      </div>
-    </div>
-  </footer>
+  </div>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('active');
+      document.getElementById('overlay').classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
