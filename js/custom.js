@@ -1,22 +1,15 @@
-/*
 
-Custom script
-
-This file will not be overwritten by the updater
-
-*/
-
-// JavaScript code
-function search_animal() {
-  let input = document.getElementById("searchbar").value;
-  input = input.toLowerCase();
-  let x = document.getElementsByClassName("animals");
-
-  for (i = 0; i < x.length; i++) {
-    if (!x[i].innerHTML.toLowerCase().includes(input)) {
-      x[i].style.display = "none";
-    } else {
-      x[i].style.display = "block";
-    }
-  }
-}
+(function () {
+  'use strict';
+  var input = document.getElementById('game-search');
+  if (!input) return;
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.grid-3, .grid-2'));
+  input.addEventListener('input', function () {
+    var q = input.value.trim().toLowerCase();
+    cards.forEach(function (col) {
+      var title = col.querySelector('.list-title');
+      if (!title) return;
+      col.style.display = !q || title.textContent.toLowerCase().indexOf(q) !== -1 ? '' : 'none';
+    });
+  });
+})();
