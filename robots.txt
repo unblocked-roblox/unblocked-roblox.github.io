@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /img/hello.html
+
+Sitemap: https://unblocked-roblox.github.io/sitemap.xml

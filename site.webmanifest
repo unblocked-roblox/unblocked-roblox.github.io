@@ -1,0 +1,15 @@
+{
+  "name": "Roblox Unblocked",
+  "short_name": "Roblox Unblocked",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#070b18",
+  "theme_color": "#111827",
+  "icons": [
+    {
+      "src": "/images/favicon.png",
+      "sizes": "85x85",
+      "type": "image/png"
+    }
+  ]
+}

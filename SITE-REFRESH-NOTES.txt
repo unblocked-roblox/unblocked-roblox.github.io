@@ -1,0 +1,41 @@
+ROBLOX UNBLOCKED SITE REFRESH — 2026-09-07
+
+Pages processed
+- Homepage: 1
+- Category pages: 18
+- Game pages: 443
+- Supporting pages: 7
+- Other utility pages: 1
+
+Implemented
+- Unique SEO titles and meta descriptions
+- Self-referencing canonical URLs
+- Open Graph and Twitter/X metadata
+- JSON-LD structured data: WebSite, Organization, WebPage, CollectionPage, ItemList, VideoGame, BreadcrumbList
+- Visible breadcrumbs on category and game pages
+- H1 improvements on category pages and a real homepage H1
+- Game-page content summaries and category links
+- Responsive dark gaming UI refresh in css/custom.css
+- Homepage game search filter in js/custom.js
+- Native image lazy-loading; removed broken lazysizes.min.js requests
+- Clean robots.txt and regenerated sitemap.xml
+- site.webmanifest and theme metadata
+- Corrected navbar brand on game pages
+- Reworded inaccurate “no ads” claims where encountered
+
+Notes
+- The site is described as an independent browser-game portal. It does not claim affiliation with Roblox Corporation.
+- Existing ad scripts and game iframe sources were preserved.
+- Existing analytics code was preserved.
+
+Final QA
+- 469 indexable HTML pages validated
+- 0 duplicate page titles
+- 0 duplicate canonical URLs
+- 0 JSON-LD parse errors
+- Meta descriptions: 103–159 characters
+- Exactly one H1 on every indexable page
+- 1,323 extensionless internal game links corrected to real .html URLs
+- Dead listing cards pointing to missing game pages removed
+- Custom 404.html added (noindex,follow)
+- All 443 /play/ iframe source URLs verified unchanged from the uploaded ZIP
