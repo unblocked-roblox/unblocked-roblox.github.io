@@ -1,9 +1,112 @@
-/*
 
-Custom style
+/* =========================================================
+   Roblox Unblocked 2026 UI refresh
+   Global overrides layered on top of the existing theme.
+   ========================================================= */
+:root {
+  --ru-bg: #070b18;
+  --ru-surface: rgba(17, 24, 39, .86);
+  --ru-surface-2: rgba(30, 41, 59, .78);
+  --ru-border: rgba(148, 163, 184, .18);
+  --ru-text: #e5e7eb;
+  --ru-muted: #9ca3af;
+  --ru-accent: #8b5cf6;
+  --ru-accent-2: #22d3ee;
+  --ru-success: #34d399;
+}
+html { scroll-behavior: smooth; }
+body, body#page-top {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  color: var(--ru-text) !important;
+  background: radial-gradient(circle at 10% 0%, rgba(139,92,246,.20), transparent 32%), radial-gradient(circle at 90% 10%, rgba(34,211,238,.14), transparent 28%), var(--ru-bg) !important;
+  background-attachment: fixed !important;
+  min-height: 100vh;
+}
+body p, body li, body strong, body h1, body h2, body h3, body h4 { font-family: inherit !important; }
+body p { font-size: 1rem !important; line-height: 1.75; color: #cbd5e1; text-align: left !important; }
+body a { color: #c4b5fd; transition: color .2s ease, transform .2s ease, border-color .2s ease, background .2s ease; }
+body a:hover { color: #67e8f9; }
+.top-nav {
+  position: sticky; top: 0; z-index: 1030;
+  margin-bottom: 28px !important; padding: 12px 0 !important;
+  background: rgba(7,11,24,.88) !important;
+  border-bottom: 1px solid var(--ru-border);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 12px 35px rgba(0,0,0,.20);
+}
+.navbar-brand { gap: 4px; font-size: 1.02rem; letter-spacing: -.02em; }
+.navbar-brand img { border-radius: 12px; box-shadow: 0 8px 24px rgba(139,92,246,.24); }
+.top-nav .nav-link { color: #dbeafe !important; padding: .65rem .72rem !important; border-radius: 10px; }
+.top-nav .nav-link:hover, .top-nav .nav-link:focus { background: rgba(139,92,246,.14); color: #fff !important; }
+.dropdown-menu { background: #111827 !important; border: 1px solid var(--ru-border) !important; border-radius: 14px !important; box-shadow: 0 18px 45px rgba(0,0,0,.35); padding: 8px !important; }
+.dropdown-menu .dropdown-item { color: #e5e7eb !important; padding: 10px 13px !important; border-radius: 9px; }
+.dropdown-menu .dropdown-item:hover { background: rgba(139,92,246,.16) !important; color:#fff !important; }
+.site-hero {
+  max-width: 1140px; margin: 0 auto 26px; padding: 42px 34px;
+  border: 1px solid var(--ru-border); border-radius: 26px;
+  background: linear-gradient(135deg, rgba(139,92,246,.16), rgba(34,211,238,.07) 60%, rgba(17,24,39,.88));
+  box-shadow: 0 28px 80px rgba(0,0,0,.28); overflow: hidden;
+}
+.hero-kicker { display:inline-flex; align-items:center; gap:8px; color:#a7f3d0; text-transform:uppercase; letter-spacing:.14em; font-size:.72rem; font-weight:700; margin-bottom:12px; }
+.site-hero h1 { color:#fff; font-size:clamp(2rem,5vw,3.6rem); line-height:1.05; letter-spacing:-.045em; max-width:900px; margin:0 0 16px; font-weight:700; }
+.site-hero > p { max-width:780px; color:#cbd5e1 !important; font-size:1.05rem !important; margin:0 0 24px !important; }
+.hero-search-wrap { position:relative; max-width:620px; margin-bottom:22px; }
+.hero-search-wrap .bi-search { position:absolute; left:16px; top:50%; transform:translateY(-50%); color:#94a3b8; }
+#game-search { width:100%; border:1px solid rgba(148,163,184,.24); background:rgba(2,6,23,.64); color:#fff; border-radius:14px; padding:14px 16px 14px 44px; outline:none; }
+#game-search:focus { border-color:#8b5cf6; box-shadow:0 0 0 4px rgba(139,92,246,.12); }
+.category-chips { display:flex; flex-wrap:wrap; gap:8px; }
+.category-chips a, .game-category-links a { color:#dbeafe !important; border:1px solid var(--ru-border); background:rgba(15,23,42,.62); border-radius:999px; padding:7px 11px; font-size:.78rem; font-weight:600; }
+.category-chips a:hover, .game-category-links a:hover { border-color:rgba(34,211,238,.45); background:rgba(34,211,238,.10); }
+.game-wrapper, body > .container { position:relative; }
+.section-title, .item-title { color:#f8fafc !important; font-weight:700 !important; letter-spacing:-.02em; margin-top:22px; }
+.grid-3 .list-game, .grid-2 .game-item, .list-vertical {
+  background: var(--ru-surface) !important; border:1px solid var(--ru-border); border-radius:16px !important; overflow:hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+.grid-3 .game-item:hover, .grid-2 .game-item:hover, .list-vertical:hover { background: rgba(30,41,59,.94) !important; transform:translateY(-3px); box-shadow:0 16px 34px rgba(0,0,0,.24); }
+.grid-3 .list-thumbnail { position:relative; aspect-ratio:4/3; background:#0f172a; }
+.grid-3 .list-thumbnail img { width:100%; height:100%; object-fit:cover; display:block; opacity:.94; }
+.grid-3 .list-title { position:absolute; left:0; right:0; bottom:0; padding:30px 12px 11px; font-size:.95rem !important; font-weight:650 !important; color:#fff !important; background:linear-gradient(transparent, rgba(2,6,23,.92)); text-shadow:0 1px 2px #000; }
+.grid-2 .game-item { padding:9px; }
+.grid-2 .list-thumbnail img { border-radius:12px !important; }
+.vex_x, .category-description, .game-seo-intro, .category-intro {
+  color:var(--ru-text) !important; background:var(--ru-surface) !important; border:1px solid var(--ru-border) !important; border-radius:18px !important; box-shadow:0 16px 38px rgba(0,0,0,.16) !important;
+}
+.vex_x { padding:18px !important; }
+.category-intro { display:flex; justify-content:space-between; gap:24px; align-items:flex-start; padding:24px; margin:0 0 22px; }
+.category-intro h1 { color:#fff; font-size:clamp(1.8rem,4vw,2.65rem); margin:0 0 10px; font-weight:700; letter-spacing:-.035em; }
+.category-intro p { max-width:850px; margin:0 !important; }
+.game-count { flex:0 0 auto; background:rgba(52,211,153,.10); color:#a7f3d0; border:1px solid rgba(52,211,153,.25); border-radius:999px; padding:8px 11px; font-size:.78rem; font-weight:700; }
+.seo-breadcrumb { display:flex; flex-wrap:wrap; align-items:center; gap:7px; color:#94a3b8; font-size:.78rem; margin:0 0 12px; }
+.seo-breadcrumb a { color:#c4b5fd !important; }
+.game-container { border-radius:18px !important; overflow:hidden; border:1px solid var(--ru-border); box-shadow:0 22px 55px rgba(0,0,0,.32); background:#020617; }
+.game-iframe-container { background:#020617 !important; }
+.game-info { background:rgba(15,23,42,.96) !important; border-top:1px solid var(--ru-border); }
+.single-title { color:#fff !important; font-weight:700 !important; letter-spacing:-.025em; }
+.btn-capsule { background:linear-gradient(135deg,#7c3aed,#4f46e5) !important; color:#fff !important; border:0 !important; box-shadow:0 8px 22px rgba(124,58,237,.24); }
+.btn-capsule:hover { transform:translateY(-1px); filter:brightness(1.08); }
+.game-seo-intro { margin:20px 0; padding:22px; }
+.game-seo-intro h2 { color:#fff; font-size:1.35rem; font-weight:700; margin:0 0 8px; }
+.game-facts { display:flex; flex-wrap:wrap; gap:8px; margin:14px 0; }
+.game-facts span { background:rgba(34,211,238,.08); color:#a5f3fc; border:1px solid rgba(34,211,238,.20); border-radius:999px; padding:6px 10px; font-size:.76rem; font-weight:600; }
+.game-category-links { display:flex; flex-wrap:wrap; gap:8px; }
+.banner-ad-wrapper, .banner-ad-content { overflow:hidden; max-width:100%; }
+.footer-copyright { margin-top:44px; background:rgba(2,6,23,.72); border-top:1px solid var(--ru-border); color:#94a3b8; }
+.footer-copyright a { color:#cbd5e1 !important; margin:0 4px; }
+hr { border-color:rgba(148,163,184,.16) !important; opacity:1 !important; }
+@media (max-width: 991.98px) {
+  .top-nav { position:relative; }
+  .navbar-collapse { margin-top:12px; padding:10px; background:rgba(15,23,42,.96); border:1px solid var(--ru-border); border-radius:14px; }
+  .site-hero { margin-left:12px; margin-right:12px; padding:30px 22px; }
+}
+@media (max-width: 767.98px) {
+  .category-intro { flex-direction:column; padding:20px; }
+  .game-count { align-self:flex-start; }
+  .grid-3 { padding-left:6px !important; padding-right:6px !important; }
+  .grid-3 .list-title { font-size:.82rem !important; padding-left:9px; padding-right:9px; }
+  .game-seo-intro { padding:18px; }
+}
 
-You can override the default class or style here
-
-This file will not be overwritten by the updater
-
-*/
+.site-disclaimer { color:#94a3b8; font-size:.74rem; line-height:1.55; padding-bottom:12px; }
+.site-brand-heading { font-size:1.5rem; font-weight:700; margin-bottom:12px; }
+.site-brand-heading a { color:#fff !important; }
